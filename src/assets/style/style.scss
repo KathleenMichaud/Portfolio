@@ -1,0 +1,385 @@
+@import 'variables.scss';
+@import '~bootstrap/scss/bootstrap.scss';
+
+
+// ----- GLOBAL ----- //
+// Global elements
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    font-size: $font-size-sm;
+}
+
+label {
+    font-size: $font-size-sm;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+button {
+    text-transform: uppercase;
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+
+// Global classes
+.min-vh-50 {
+    min-height: 50vh;
+}
+
+.text-lighter-dark {
+    color: lighten($dark, 2%);
+}
+
+.bg-lighter-dark {
+    color: lighten($dark, 2%);
+}
+.text-darker-dark {
+    color: darken($dark, 2%);
+}
+
+.bg-darker-dark {
+    color: darken($dark, 2%);
+}
+
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.z-index-100 {
+    z-index: 100;
+}
+
+.font-family-base {
+    font-family: $font-family-base;
+}
+
+.font-family-headings {
+    font-family: $headings-font-family;
+}
+
+.btn-back {
+    padding-left: 15px;
+    color: $white;
+    position: relative;
+    border: 0;
+    outline: none;
+    background: transparent;
+
+    &::before {
+        content: '';
+        transform-origin: center;
+        transform: rotate(-45deg);
+        display: inline-block;
+        height: 8px;
+        width: 8px;
+        border-top: 2px solid $white;
+        border-left: 2px solid $white;
+        position: absolute;
+        left: 0;
+        top: calc(50% - 4px);
+    }
+    &::after {
+        content: '';
+        transition: all 0.15s ease-in-out;
+        top: calc(50% - 1px);
+        display: inline-block;
+        height: 2px;
+        width: 10px;
+        max-width: 10px;
+        background-color: $white;
+        position: absolute;
+        left: 0;
+    }
+    &:hover::after {
+        max-width: 100px;
+        width: 100%;
+    }
+}
+
+
+// ----- MAIN ----- //
+// Home page
+.main-header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 85vh;
+    position: relative;
+    padding-top: map-get($spacers, 5) * 2;
+    padding-bottom: map-get($spacers, 5) * 2;
+    margin-bottom: -(map-get($spacers, 5) * 2);
+    background: url('../images/hero_bg.png');
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+
+.main-nav {
+    margin: 0 auto;
+    padding-top: $spacer;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    &-link {
+        color: $secondary;
+        transition: color 0.15s ease-in-out;
+
+        &:hover {
+            text-decoration: none;
+
+            &-text {
+                color: $dark;
+            }
+        }
+    }
+}
+
+.main-section {
+    min-height: 75vh;
+    padding-bottom: map-get($spacers, 5);
+    padding-top: map-get($spacers, 5);
+    position: relative;
+
+    &-img {
+        &-phone {
+            max-height: 75vh;
+            max-width: 100%;
+
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            top: 0;
+
+            @include media-breakpoint-down(sm) {
+                opacity: 0.75;
+                transform: translateY(35%);
+            }
+
+        }
+        &-porte {
+            cursor: pointer;
+            max-height: 75vh;
+            transition: transform 0.15s ease-in-out;
+            transform-origin: bottom;
+
+            @include media-breakpoint-up(md) { 
+                position: absolute;
+                bottom: -(map-get($spacers, 5) * 2);
+                left: 0;
+            }
+
+            &.knock {
+                animation-delay: 0.5s;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-name: knock;
+                animation-timing-function: linear;
+            }
+        }
+    }
+}
+
+.section {
+    &-about {
+        min-height: 100vh;
+        padding-top: map-get($spacers, 5) * 2;
+        background: url('../images/about_bg.png');
+        background-position: center bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include media-breakpoint-up(md) { 
+            padding-bottom: map-get($spacers, 5) * 2;
+        }
+
+        &-container {
+            padding-top: map-get($spacers, 5);
+            flex-direction: column-reverse;
+            flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+            position: relative;
+            
+            @include media-breakpoint-up(md) { 
+                padding-bottom: map-get($spacers, 5);
+                flex-direction: row;
+                flex-wrap: nowrap;
+            }
+        }
+
+        &-knock-text {
+            position: absolute;
+            font-size: 50px;
+            text-transform: uppercase;
+            font-family: $headings-font-family;
+            z-index: 10;
+            transform: rotate(20deg);
+            animation-delay: 0.5s;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-name: knockText;
+            animation-timing-function: linear;
+        }
+    }
+    &-contact {
+        z-index: 150;
+        padding-top: map-get($spacers, 5) * 2;
+        padding-bottom: map-get($spacers, 5) * 2;
+        background: url('../images/contact_bg.png');
+        background-position: center top;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &-title {
+        font-family: $font-family-base;
+        font-size: $font-size-lg;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        &-quote-source {
+            align-items: center;
+            display: flex;
+
+            &::before {
+                content: '';
+                background-color: black;
+                display: block;
+                height: 1px;
+                margin-right: map-get($spacers, 2);
+                width: 20px;
+            }
+        }
+    }
+}
+
+.main-footer {
+    position: relative;
+    z-index: 200;
+    padding-top: map-get($spacers, 5);
+    padding-bottom: map-get($spacers, 5) * 2;
+    margin-top: -(map-get($spacers, 5)) * 2;
+    background: url('../images/footer_bg.png');
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.project-thumbnail {
+    &-container {
+        position: relative;
+        width: 100%;
+
+        &:hover .project-thumbnail-overlay {
+            opacity: 0;
+        }
+    }
+    &-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: opacity 0.25s ease-in-out;
+    }
+}
+
+.projects{
+    &-overlay {
+        scroll-behavior: smooth;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: $dark;
+        z-index: 1000;
+        overflow: scroll;
+
+        &-content {
+            opacity: 0.75;
+        }
+    }
+    &-sidenav {
+        &-li {
+            &.is-active a::before {
+                width: 100%;
+                max-width: 200px;
+                background-color: $primary;
+            }
+            &:not(.is-active) a::before {
+                max-width: 10px;
+            }
+            &:hover a::before {
+                width: 100%;
+                max-width: 200px;
+            }
+            &.is-active a {
+                color: $primary;
+            }
+            & a {
+                color: $white;
+                padding-left: 15px;
+                padding-right: 5px;
+                position: relative;
+                display: inline-block;
+
+                &::before {
+                    content: '';
+                    transition: all 0.25s ease-in-out;
+                    top: calc(50% - 1px);
+                    position: absolute;
+                    left: 0;
+                    height: 2px;
+                    background-color: $white;
+                    width: 10px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+// Animations
+@keyframes knock {
+    0% { transform: scale(1); }
+    30% { transform: scale(1); }
+    32% { transform: scale(1.05); }
+    34% { transform: scale(1); }
+    40% { transform: scale(1); }
+    42% { transform: scale(1.1); }
+    44% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+@keyframes knockText {
+    0% { opacity: 0; transform: rotate(20deg); }
+    30% { opacity: 0; }
+    32% { opacity: 1; }
+    41% { transform: rotate(20deg); }
+    42% { transform: rotate(-30deg); opacity: 1; }
+    50% { opacity: 1; }
+    51% { opacity: 0; }
+    100% { opacity: 0; }
+}
