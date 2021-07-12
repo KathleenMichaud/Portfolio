@@ -58,7 +58,7 @@ const ProjectsOverlay = ({isOpen, toggle, data}) => {
             skewSetter = gsap.quickSetter(".project-image", "skewY", "deg"), // fast
             clamp = gsap.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees. 
 
-            if(sT) sT.kill();
+            if(!!sT) sT.kill();
 
             var sT = ScrollTrigger.create({
                 scroller: '.projects-overlay',

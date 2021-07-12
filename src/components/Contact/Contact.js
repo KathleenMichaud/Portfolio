@@ -3,7 +3,7 @@ import { Container, FormGroup, Button, Row, Col, Spinner } from "react-bootstrap
 import SectionTitle from "../_Global/SectionTitle";
 import Phone from '../../assets/images/phone.png';
 import { Form, Formik, ErrorMessage, Field } from "formik";
-import * as Yup from 'yup';
+import { string, object } from 'yup';
 import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from 'emailjs-com';
 
@@ -45,11 +45,11 @@ const Contact = () => {
                                     message: '',
                                     recaptcha: '',
                                 }}
-                                validationSchema={Yup.object().shape({
-                                    name: Yup.string().required('Veuillez indiquer votre nom.'),
-                                    email: Yup.string().email('Veuillez rentrer une addresse courriel valide.').required('Veuillez écrire votre addresse courriel.'),
-                                    message: Yup.string().required('Veuillez écrire votre message.'),
-                                    recaptcha: Yup.string().required('Veuillez confirmer que vous êtes humain.')
+                                validationSchema={object().shape({
+                                    name: string().required('Veuillez indiquer votre nom.'),
+                                    email: string().email('Veuillez rentrer une addresse courriel valide.').required('Veuillez écrire votre addresse courriel.'),
+                                    message: string().required('Veuillez écrire votre message.'),
+                                    recaptcha: string().required('Veuillez confirmer que vous êtes humain.')
                                 })}
                                 onSubmit={(values, {setSubmitting, setErrors}) => {
                                     if(recaptchaRef.current.getValue()) {
@@ -72,14 +72,14 @@ const Contact = () => {
                                     }
                                 }}
                             >
-                                { formik => (
+                                { ({ isSubmitting, errors, setFieldValue}) => (
                                     <Form>
                                         <FormGroup>
                                             <label htmlFor="name">Nom</label>
                                             <Field 
                                                 id="name" 
                                                 name="name" 
-                                                className={`form-control${formik.errors.name ? ' border border-primary':''}`} 
+                                                className={`form-control${errors.name ? ' border border-primary':''}`} 
                                                 type="text" 
                                             />
                                             <ErrorMessage name="name" render={msg => <small className="text-primary">{msg}</small>} />
@@ -89,7 +89,7 @@ const Contact = () => {
                                             <Field 
                                                 id="email" 
                                                 name="email" 
-                                                className={`form-control${formik.errors.email ? ' border border-primary':''}`} 
+                                                className={`form-control${errors.email ? ' border border-primary':''}`} 
                                                 type="email" 
                                             />
                                             <ErrorMessage name="email" render={msg => <small className="text-primary">{msg}</small>} />
@@ -100,24 +100,24 @@ const Contact = () => {
                                                 as="textarea"
                                                 id="message" 
                                                 name="message" 
-                                                className={`form-control${formik.errors.message ? ' border border-primary':''}`}
+                                                className={`form-control${errors.message ? ' border border-primary':''}`}
                                             />
                                             <ErrorMessage name="message" render={msg => <small className="text-primary">{msg}</small>} />
                                         </FormGroup>
                                         <ReCAPTCHA
-                                            className={`${formik.errors.recaptcha ? 'border border-primary d-inline-block' : ''}`}
-                                            onChange={e => formik.setFieldValue("recaptcha", e ?? '')}
+                                            className={`${errors.recaptcha ? 'border border-primary d-inline-block' : ''}`}
+                                            onChange={e => setFieldValue("recaptcha", e ?? '')}
                                             sitekey={SITE_KEY}
                                             ref={recaptchaRef}
                                         />
-                                        {formik.errors.recaptcha && <small className="d-block text-primary">{formik.errors.recaptcha}</small>}
-                                        <Button className="mt-2" type="submit" disabled={formik.isSubmitting}>
-                                            {formik.isSubmitting ? 
+                                        {errors.recaptcha && <small className="d-block text-primary">{errors.recaptcha}</small>}
+                                        <Button className="mt-2" type="submit" disabled={isSubmitting}>
+                                            {isSubmitting ? 
                                                 <span className="mr-2">Envoi...</span> 
                                                 :
                                                 'Envoyer'
                                             } 
-                                            {formik.isSubmitting && <Spinner animation="grow" size="sm" />}
+                                            {isSubmitting && <Spinner animation="grow" size="sm" />}
                                         </Button>
                                     </Form>
                                 )}

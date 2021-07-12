@@ -11,7 +11,7 @@ const Observer = ({
     const obsEl = useCallback(node => {
         observer.current = new IntersectionObserver(([entry]) => {
             if(entry.isIntersecting) {
-                if(onView) onView();
+                onView?.();
                 if(once && observer.current && node) observer.current.unobserve(node);
             };
         }, {root: null, rootMargin: '0px', treshold: 1});

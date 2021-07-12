@@ -1,6 +1,6 @@
 import Observer from "../../_Global/Observer";
 
-const ProjectsList = ({toggleSection, projects}) => {
+const ProjectsList = ({ toggleSection, projects }) => {
     
     return(
         projects?.map((pro, i) => (

@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { ProjectsData } from './ProjectsData';
+import { ProjectsData } from './ProjectsData/ProjectsData';
 import SectionTitle from "../_Global/SectionTitle";
 import ProjectPreview from "./ProjectPreview/ProjectPreview";
 import ProjectsOverlay from "./ProjectsOverlay/ProjectsOverlay";
