@@ -23,7 +23,7 @@ const ProjectsOverlay = ({isOpen, toggle, data}) => {
             });
     }
 
-    const toggleSection = info => setCurrentSection(prev => info);
+    const toggleSection = setCurrentSection;
 
     function skewWidth(deg, height) {
         return Math.atan(deg * (Math.PI / 180)) * height;
@@ -31,7 +31,7 @@ const ProjectsOverlay = ({isOpen, toggle, data}) => {
 
     useEffect(() => setCurrentSection(data?.projects[0]), [data]);
     useEffect(() => {
-        var slide = gsap.fromTo(overlayRef.current,
+        let slide = gsap.fromTo(overlayRef.current,
             {
                 x:0,
                 y:0,
@@ -50,15 +50,11 @@ const ProjectsOverlay = ({isOpen, toggle, data}) => {
         if(isOpen) {
             gsap.set(projectsRef.current, { opacity: 0});
 
-            slide.eventCallback("onReverseComplete", function() {
-                projectsFade();
-            });
+            slide.eventCallback("onReverseComplete", projectsFade);
             slide.reverse(0);
             let proxy = { skew: 0 },
             skewSetter = gsap.quickSetter(".project-image", "skewY", "deg"), // fast
-            clamp = gsap.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees. 
-
-            if(!!sT) sT.kill();
+            clamp = gsap.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees.
 
             var sT = ScrollTrigger.create({
                 scroller: '.projects-overlay',
@@ -86,10 +82,10 @@ const ProjectsOverlay = ({isOpen, toggle, data}) => {
             sT?.kill();
             slide?.kill();
         };
-    }, [isOpen]);
+    }, [isOpen, overlayRef.current]);
 
     return(
-        <section ref={overlayRef} id={'projects-overlay'} className={`projects-overlay py-5 ${data?.categoryNb}-projects`}>
+        <section ref={overlayRef} id='projects-overlay' className={`projects-overlay py-5 ${data?.categoryNb}-projects`}>
             <Container>
                 <Row>
                     <Col ref={headerRef} as="section" md="4" className="text-left">
