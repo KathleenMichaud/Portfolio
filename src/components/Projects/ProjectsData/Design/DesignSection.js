@@ -4,7 +4,6 @@ import { designs } from './DesignProjects';
 
 export const designSection = {
     id: 'graphic-design',
-    categoryNb: 1,
     title: 'Design graphique',
     quote: {
         quote: 'Stop going for the easy buck and start producing something with your life. Create, instead of living off the buying and selling of others.', 
