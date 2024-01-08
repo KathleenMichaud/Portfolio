@@ -1,0 +1,120 @@
+---
+import Button from "../components/Button.astro";
+import Contact from "../components/Contact.jsx";
+import ProjectPreview from "../components/ProjectPreview.astro";
+import Layout from "../layouts/Layout.astro";
+import Section from "../layouts/home/Section.astro";
+import SectionTitle from "../layouts/home/SectionTitle.astro";
+
+---
+
+<Layout class="bg-pink bg-[url('/src/assets/images/patterns/home.png')] text-white text-center">
+	<header class="mx-auto px-8 pb-16 h-screen flex flex-col text-center items-center justify-center">
+		<nav class="absolute top-0 left-0 right-0">
+			<ul class="flex justify-center gap-4">
+				<li class="py-4 text-xl"><a href="#projets">Projets</a></li>
+				<li class="py-4 text-xl"><a href="/apropos">À propos</a></li>
+				<li class="py-4 text-xl"><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="relative z-10 mb-8">
+			<div
+				class:list={[
+					"overflow-hidden bg-white relative h-[300px] w-[300px] rounded-full",
+					"before:bg-yellow before:absolute before:-z-10 before:h-10 before:rounded-full before:bottom-8 before:w-full before:left-1/4",
+					"after:bg-yellow after:absolute after:-z-10 after:h-10 after:rounded-full after:-bottom-4 after:w-full after:left-8"
+				]}
+			>
+				<img src="src/assets/images/photo.png" />
+			</div>
+		</div>
+		<h1 class="text-6xl font-bold uppercase">@ Kathleen Michaud</h1>
+		<p class="text-xl">Designer | Chicken lover</p>
+		<div class="absolute bottom-3 flex w-full gap-3">
+			<Button tag="a" href="#contact" class="w-1/2 max-w-6xl -ml-4">
+				Céduler un café
+			</Button>
+			<Button tag="a" href="https://www.instagram.com/kath.inktribe/" target="_blank" rel="noopener noreferrer" isCircle>
+				<i class="fab fa-instagram" />
+			</Button>
+			<Button tag="a" href="https://www.linkedin.com/in/kathleen-michaud-8a98b6b4/" target="_blank" rel="noopener noreferrer" isCircle>
+				<i class="fab fa-linkedin" />
+			</Button>
+			<Button tag="a" href="https://www.behance.net/kathleenmichaud3" target="_blank" rel="noopener noreferrer" isCircle>
+				<i class="fab fa-behance" />
+			</Button>
+		</div>
+	</header>
+	<Section id="projets" class="container min-h-screen">
+		<header>
+			<SectionTitle>
+				Projets design
+			</SectionTitle>
+			<p class="font-cursive text-4xl text-purple mb-8">Clique pour voir plus!</p>
+		</header>
+		<ul class="flex flex-wrap justify-center">
+			<li class="-mr-4 basis-1/2">
+				<ProjectPreview 
+					title="Carrefour jeunesse-emploi des Moulins"
+					projet="cje"
+				>
+				<Fragment slot="content">
+					<p class="mb-2 text-2xl">2023</p>
+
+					<p class="mb-1 text-lg">Refonte de l'image de marque</p>
+					<p class="mb-1 text-lg">Création d'un plan de comm</p>
+					<p class="mb-1 text-lg">Nouveau site web</p>
+					<p class="text-lg">Photo de l'équipe</p>
+				</Fragment>
+				</ProjectPreview>
+			</li>
+			<li class="-ml-4 mt-20 basis-1/2">
+				<ProjectPreview
+					title="Agence créative Mouton Rebel"
+					projet="moutonrebel"
+				>
+					<Fragment slot="content">
+						<p class="mb-2 text-2xl">2023</p>
+
+						<p class="mb-1 text-lg">Création de l'image de marque</p>
+						<p class="mb-1 text-lg">Création d'un plan de comm</p>
+						<p class="text-lg">Création d'un site web</p>
+					</Fragment>
+				</ProjectPreview>
+			</li>
+			<li class="-mr-4 -mt-16 basis-1/2">
+				<ProjectPreview
+					title="Gym d'escalade Flash Monkeys"
+					projet="flashmonkeys"
+				>
+					<Fragment slot="content">
+						<p class="mb-2 text-2xl">2023</p>
+
+						<p class="mb-1 text-lg">Création d'une image de marque</p>
+						<p class="text-lg">Création d'un site web</p>
+					</Fragment>
+				</ProjectPreview>
+			</li>
+			<li class="-ml-4 mt-4 basis-1/2">
+				<ProjectPreview
+					title="Kino"
+					projet="kinorivenord"
+				>
+					<Fragment slot="content">
+						<p class="mb-2 text-2xl">2021</p>
+
+						<p class="mb-1 text-lg">Refonte de l'image de marque</p>
+						<p class="text-lg">Création d'un site web</p>
+					</Fragment>
+				</ProjectPreview>
+			</li>
+		</ul>
+	</Section>
+	<Contact client:visible />
+	<footer class="container py-16">
+		<h3 class="text-4xl font-bold uppercase">@ Kathleen Michaud</h1>
+		<p class="text-lg">Designer | Chicken lover</p>
+		<h2 class="text-9xl font-cursive my-8">Merci!</h2>
+		<small>© Kathleen Michaud, 2023</small>
+	</footer>
+</Layout>

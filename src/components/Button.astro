@@ -1,0 +1,22 @@
+---
+import { sharedBtnStyles } from "../helpers/helpers";
+
+const { class: className, tag: Tag = "button", theme = "primary", isCircle, paddingX, ...props } = Astro.props;
+const btnStyles = isCircle ? "w-10" : paddingX || "px-12";
+const themeStyles = {
+    primary: "after:bg-white before:bg-pink text-pink",
+    secondary: "after:bg-pink before:bg-white text-white"
+}
+---
+
+<Tag
+    {...props}
+    class:list={[
+        className,
+        btnStyles,
+        themeStyles[theme],
+        sharedBtnStyles,
+    ]}
+>
+    <slot />
+</Tag>

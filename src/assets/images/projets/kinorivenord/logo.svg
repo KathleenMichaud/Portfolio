@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360.99 169.86">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        font-family: FreightTextProLight-Regular, 'FreightText Pro';
+        font-size: 33.62px;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: #bc2314;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        font-family: Impact, Impact;
+        font-size: 72.73px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1">
+    <g>
+      <polyline class="cls-3" points="48.67 74.4 48.67 86.7 37.74 74.4"/>
+      <polyline class="cls-3" points="48.67 161.3 48.67 149.01 37.74 161.3"/>
+      <polyline class="cls-3" points="0 74.4 43.45 117.85 0 161.3"/>
+      <g>
+        <polygon class="cls-3" points="161.05 74.4 161.05 159.44 118.53 159.44 110.63 128.96 103.6 159.44 76.01 159.44 76.01 74.4 118.29 74.4 126.19 104.89 133.21 74.4 161.05 74.4"/>
+        <circle class="cls-3" cx="98.15" cy="33.59" r="33.59"/>
+        <circle class="cls-3" cx="147.2" cy="43.71" r="23.48"/>
+        <text class="cls-4" transform="translate(221.9 132.48)"><tspan x="0" y="0">KINO</tspan></text>
+        <text class="cls-2" transform="translate(221.9 160.95)"><tspan x="0" y="0">Rive-</tspan><tspan class="cls-1" x="68.22" y="0">N</tspan><tspan x="91.09" y="0">o</tspan><tspan class="cls-5" x="108.5" y="0">r</tspan><tspan x="119.67" y="0">d</tspan></text>
+        <rect class="cls-3" x="193.86" y="74.4" width="8.19" height="85.04"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,40 @@
+---
+import ProjectLayout from "../layouts/ProjectLayout.astro";
+import Section from "../layouts/home/Section.astro";
+
+---
+
+<ProjectLayout
+    title="Carrefour Jeunesse-Emploi des moulins"
+    class="relative w-full z-10 pb-20"
+    logo="cje/logo.svg"
+    color="text-cje"
+>
+    <div
+        class="absolute -z-10 opacity-10 inset-0 bg-[length:100%_auto] bg-[url('/src/assets/images/projets/cje/pattern.png')]"
+    />
+    <Fragment slot="title">
+        Carrefour<br />
+        Jeunesse-Emploi<br />
+        des moulins
+    </Fragment>
+    <Fragment slot="subtitle">
+        Refonte de l'image de marque
+    </Fragment>
+    <img src="src/assets/images/projets/cje/mockup_elements.png" class="max-w-full mx-auto" />
+    <img src="src/assets/images/projets/cje/avant-apres.png" class="mx-auto pt-8 max-w-full" />
+    <Section class="container">
+        <p class="mb-3">Le Carrefour jeunesse-emploi des Moulins est un organisme à but non lucratif dont la mission est d'accompagner les jeunes âgés de 16 à 35 ans dans leurs parcours vers l'autonomie sociale, personnelle et économique en leur offrant des services et conseils gratuits favorisant l'intégration du marché de l'emploi, la persévérance scolaire, le retour aux études, ou le développement d'une culture entrepreneuriale.</p>
+        <p class="mb-3">Dès la signature du contrat, j'ai entrepris une analyse approfondie de l'ancienne image de marque, de la clientèle cible et du paysage concurrentiel. L'objectif primordial était de concevoir un design et une palette de couleurs jeunes et dynamiques, tout en garantissant une pérennité qui s'harmonise avec la mission fondamentale du Carrefour.</p>
+        <p class="mb-12">Le processus de refonte a été pensé avec rigueur et créativité, mettant en lumière les valeurs essentielles de l'organisme tout en insufflant une nouvelle énergie visuelle. La nouvelle identité visuelle se veut à la fois moderne et intemporelle, captivant l'attention de la jeunesse tout en reflétant la solidité et la fiabilité nécessaires à la crédibilité de l'organisme.</p>
+        
+        <p class="mb-12 text-3xl flex gap-3">
+            <span class="font-bold text-8xl">«</span>
+            Elle s'est pleinement investie dans ses fonctions, nous a présenté une planification pour nos médias sociaux et travaille à nous placer à l’avant-plan avec un solide savoir-faire. Créative et rigoureuse, Kathleen Michaud met tout en œuvre pour atteindre ses objectifs.
+            <span class="font-bold text-8xl">»</span>
+        </p>
+        
+        <img class="mb-3 max-w-full" src="src/assets/images/projets/cje/preview_illustrator.png" />
+        <img class="max-w-full" src="src/assets/images/projets/cje/preview_photoshop.png" />
+    </Section>
+</ProjectLayout>

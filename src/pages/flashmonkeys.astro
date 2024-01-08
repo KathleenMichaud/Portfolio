@@ -1,0 +1,30 @@
+---
+import ProjectLayout from "../layouts/ProjectLayout.astro";
+import Section from "../layouts/home/Section.astro";
+
+---
+
+<ProjectLayout 
+    title="Flash Monkeys"
+    logo="flashmonkeys/logo.svg"
+    color="text-flashmonkeys"
+>
+    <Fragment slot="title">
+        Complexe<br />
+        D'escalade<br/>
+        Flash Monkeys
+    </Fragment>
+    <Fragment slot="subtitle">
+        Image de marque | Design web<br/>
+        Illustration | Rédaction
+    </Fragment>
+    <img src="src/assets/images/projets/flashmonkeys/mockup_elements.png" class="max-w-full mx-auto" />
+    <Section class="container">
+        <p>
+            Un groupe d'amis passionnés d'escalade a décidé de concrétiser un rêve en lançant leur propre gym d'escalade. C'est avec une grande joie que j'ai donné vie à un univers unique autour de leur nom, les Flash Monkeys. Ils souhaitaient quelque chose de moderne, sportif et dynamique, tout en évitant un aspect trop enfantin.
+        </p>
+        <p class="mb-20">La salle n'est pas encore opérationnelle, ils se trouvent actuellement en phase de pré-démarrage.</p>
+        <img src="src/assets/images/projets/flashmonkeys/work_illustrator.png" class="max-w-full mx-auto mb-3" />
+        <img src="src/assets/images/projets/flashmonkeys/work_photoshop.png" class="max-w-full mx-auto" />
+    </Section>
+</ProjectLayout>
