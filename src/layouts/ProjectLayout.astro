@@ -2,6 +2,8 @@
 import Layout from "./Layout.astro";
 
 const { title, logo, color, ...props } = Astro.props;
+
+import logo from `src/assets/images/projets/${logo}`;
 ---
 
 <Layout
@@ -16,7 +18,7 @@ const { title, logo, color, ...props } = Astro.props;
             </h1>
             <p class="text-3xl"><slot name="subtitle" /></p>
         </div>
-        <img width="200" src={`src/assets/images/projets/${logo}`} />
+        <img width="200" src={logo.src} />
     </header>
     <slot />
 </Layout>
