@@ -1,6 +1,9 @@
 ---
 import ProjectLayout from "../layouts/ProjectLayout.astro";
 import Section from "../layouts/home/Section.astro";
+import mockup from "../assets/images/projets/kinorivenord/mockup_elements.png";
+import illustrator from "../assets/images/projets/kinorivenord/work_illustrator.png";
+import photoshop from "../assets/images/projets/kinorivenord/mwork_photoshop.png";
 
 ---
 
@@ -17,11 +20,11 @@ import Section from "../layouts/home/Section.astro";
     <Fragment slot="subtitle">
         Refonte de l'image de marque
     </Fragment>
-    <img src="src/assets/images/projets/kinorivenord/mockup_elements.png" class="max-w-full mx-auto" />
+    <img src={mockup.src} class="max-w-full mx-auto" />
     <Section class="container">
         <p class="mb-3">Les administrateurs de l'organisme Kino 640 ont pris la décision de revoir leur image de marque. C'est ainsi que j'ai été approché pour la refonte du logo, des couleurs et de l'identité visuelle, centrée autour de leur projet et de la projection de courts-métrages.</p>
         <p class="mb-12">J'ai opté pour des couleurs et un style à la fois moderne, jeune et rétro, dans le but d'attirer l'attention et de susciter la curiosité aussi bien du public que des jeunes créateurs. Le nom a également été modifié pour devenir Kino Rive-Nord, une appellation bien plus inclusive.</p>
-        <img class="mb-3 max-w-full" src="src/assets/images/projets/kinorivenord/work_illustrator.png" />
-        <img class="max-w-full" src="src/assets/images/projets/kinorivenord/work_photoshop.png" />
+        <img class="mb-3 max-w-full" src={illustrator.src} />
+        <img class="max-w-full" src={photoshop.src} />
     </Section>
 </ProjectLayout>
