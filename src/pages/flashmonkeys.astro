@@ -1,6 +1,7 @@
 ---
 import ProjectLayout from "../layouts/ProjectLayout.astro";
 import Section from "../layouts/home/Section.astro";
+import mockup from "../assets/images/projets/flashmonkeys/mockup_elements.png";
 
 ---
 
@@ -18,7 +19,7 @@ import Section from "../layouts/home/Section.astro";
         Image de marque | Design web<br/>
         Illustration | Rédaction
     </Fragment>
-    <img src="src/assets/images/projets/flashmonkeys/mockup_elements.png" class="max-w-full mx-auto" />
+    <img src={mockup.src} class="max-w-full mx-auto" />
     <Section class="container">
         <p>
             Un groupe d'amis passionnés d'escalade a décidé de concrétiser un rêve en lançant leur propre gym d'escalade. C'est avec une grande joie que j'ai donné vie à un univers unique autour de leur nom, les Flash Monkeys. Ils souhaitaient quelque chose de moderne, sportif et dynamique, tout en évitant un aspect trop enfantin.

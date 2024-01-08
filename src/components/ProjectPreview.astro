@@ -1,4 +1,5 @@
 ---
+import hearts from "../assets/images/coeurs.png";
 const { title, imgSrc, projet } = Astro.props;
 ---
 <article class="relative group">
@@ -7,7 +8,7 @@ const { title, imgSrc, projet } = Astro.props;
     </figure>
     <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity inset-0 bg-[rgba(0,0,0,0.7)] p-4 flex flex-col justify-center items-center">
         <h3 class="text-2xl font-bold uppercase ">
-            <img src="src/assets/images/coeurs.png" class="mx-auto mb-2 max-h-[1.5em]" />
+            <img src={hearts.src} class="mx-auto mb-2 max-h-[1.5em]" />
             {title}
         </h3>
         <slot name="content" />
