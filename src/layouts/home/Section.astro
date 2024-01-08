@@ -1,0 +1,6 @@
+---
+const { class: className, ...otherProps } = Astro.props;
+---
+<section class:list={["py-20", className ]} {...otherProps}>
+    <slot />
+</section>
