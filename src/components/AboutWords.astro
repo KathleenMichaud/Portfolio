@@ -26,6 +26,7 @@
         function eraseLastWord() {
             timeout = setTimeout(() => {
                 if(lastLetter - 1 < -1) {
+                    //@ts-ignore
                     oops.style.display = "none";
                     queueNextWord();
                 } else {
@@ -49,6 +50,7 @@
 
                     timeout = setTimeout(() => {
                         eraseLastWord();
+                        //@ts-ignore
                         oops.style.display = "block";
                     }, 400);
                 } else {

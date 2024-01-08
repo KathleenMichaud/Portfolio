@@ -2,8 +2,11 @@ import { useRef, useState } from "react";
 import { sharedBtnStyles } from "../helpers/helpers";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { string, object } from 'yup';
-import emailjs from 'emailjs-com';
-import ReCAPTCHA from 'react-google-recaptcha';
+import emailjscom from 'emailjs-com';
+import captcha from 'react-google-recaptcha';
+
+const ReCAPTCHA = captcha.default? captcha.default: captcha;
+const emailjs = emailjscom.default? emailjscom.default : emailjscom;
 
 const Contact = () => {
     const recaptchaRef = useRef();
