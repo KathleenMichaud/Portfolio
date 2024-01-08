@@ -5,6 +5,10 @@ import ProjectPreview from "../components/ProjectPreview.astro";
 import Layout from "../layouts/Layout.astro";
 import Section from "../layouts/home/Section.astro";
 import SectionTitle from "../layouts/home/SectionTitle.astro";
+import cjeCover from "../assets/images/projets/cje/cover.png";
+import moutonCover from "../assets/images/projets/moutonrebel/cover.png";
+import kinoCover from "../assets/images/projets/kino/cover.png";
+import flashCover from "../assets/images/projets/flashmonkeys/cover.png";
 
 ---
 
@@ -57,6 +61,7 @@ import SectionTitle from "../layouts/home/SectionTitle.astro";
 				<ProjectPreview 
 					title="Carrefour jeunesse-emploi des Moulins"
 					projet="cje"
+					imgSrc={cjeCover.src}
 				>
 				<Fragment slot="content">
 					<p class="mb-2 text-2xl">2023</p>
@@ -72,6 +77,7 @@ import SectionTitle from "../layouts/home/SectionTitle.astro";
 				<ProjectPreview
 					title="Agence créative Mouton Rebel"
 					projet="moutonrebel"
+					imgSrc={moutonCover.src}
 				>
 					<Fragment slot="content">
 						<p class="mb-2 text-2xl">2023</p>
@@ -86,6 +92,7 @@ import SectionTitle from "../layouts/home/SectionTitle.astro";
 				<ProjectPreview
 					title="Gym d'escalade Flash Monkeys"
 					projet="flashmonkeys"
+					imgSrc={flashCover.src}
 				>
 					<Fragment slot="content">
 						<p class="mb-2 text-2xl">2023</p>
@@ -99,6 +106,7 @@ import SectionTitle from "../layouts/home/SectionTitle.astro";
 				<ProjectPreview
 					title="Kino"
 					projet="kinorivenord"
+					imgSrc={kinoCover.src}
 				>
 					<Fragment slot="content">
 						<p class="mb-2 text-2xl">2021</p>
