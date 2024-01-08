@@ -42,7 +42,7 @@ const Contact = () => {
                             :
                             <>
                                 Il semblerait qu'il y ait eu un problème lors de l'envoi du message. Veuillez entrez votre message de nouveau, revenir plus tard ou me contacter directement au courriel suivant: 
-                                <br/> <a className="text-pink" href="mailto:contact@kathleen-michaud.com">contact@kathleen-michaud.com</a>
+                                <br/> <a className="text-pink" href="mailto:kathleen-michaud@hotmail.ca">kathleen-michaud@hotmail.ca</a>
                             </>
                         }
                     </p>
