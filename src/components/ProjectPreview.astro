@@ -1,5 +1,6 @@
 ---
 import hearts from "../assets/images/coeurs.png";
+import Link from "./Link.astro";
 const { title, imgSrc, projet } = Astro.props;
 ---
 <article class="relative group">
@@ -12,6 +13,6 @@ const { title, imgSrc, projet } = Astro.props;
             {title}
         </h3>
         <slot name="content" />
-        <a href={`/Portfolio/${projet}`} class="absolute inset-0"/>
+        <Link href={`/${projet}`} class="absolute inset-0"/>
     </div>
 </article>

@@ -1,5 +1,6 @@
 ---
 import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
 import Contact from "../components/Contact.jsx";
 import ProjectPreview from "../components/ProjectPreview.astro";
 import Layout from "../layouts/Layout.astro";
@@ -14,11 +15,11 @@ import photo from "../assets/images/photo.png";
 ---
 
 <Layout class="bg-pink bg-[url('/src/assets/images/patterns/home.png')] text-white text-center">
-	<header class="mx-auto px-8 pb-16 h-screen flex flex-col text-center items-center justify-center">
-		<nav class="absolute top-0 left-0 right-0">
+	<header class="mx-auto px-8 pb-16 flex flex-col text-center items-center justify-center">
+		<nav class="mb-8">
 			<ul class="flex justify-center gap-4">
 				<li class="py-4 text-xl"><a href="#projets">Projets</a></li>
-				<li class="py-4 text-xl"><a href="/Portfolio/apropos">À propos</a></li>
+				<li class="py-4 text-xl"><Link href="/apropos">À propos</Link></li>
 				<li class="py-4 text-xl"><a href="#contact">Contact</a></li>
 			</ul>
 		</nav>
@@ -35,25 +36,25 @@ import photo from "../assets/images/photo.png";
 		</div>
 		<h1 class="text-4xl lg:text-6xl font-bold uppercase">@ Kathleen Michaud</h1>
 		<p class="text-xl">Designer | Chicken lover</p>
-		<div class="absolute bottom-3 flex w-full gap-3">
-			<Button tag="a" href="#contact" class="w-1/2 max-w-6xl -ml-4">
-				Céduler un café
-			</Button>
-			<Button tag="a" href="https://www.instagram.com/kath.inktribe/" target="_blank" rel="noopener noreferrer" isCircle>
-				<i class="fab fa-instagram" />
-			</Button>
-			<Button tag="a" href="https://www.linkedin.com/in/kathleen-michaud-8a98b6b4/" target="_blank" rel="noopener noreferrer" isCircle>
-				<i class="fab fa-linkedin" />
-			</Button>
-			<Button tag="a" href="https://www.behance.net/kathleenmichaud3" target="_blank" rel="noopener noreferrer" isCircle>
-				<i class="fab fa-behance" />
-			</Button>
-		</div>
 	</header>
+	<div class="flex w-full gap-3 pr-3 md:pr-0">
+		<Button tag="a" href="#contact" class="w-1/2 max-w-6xl flex-grow md:flex-grow-0 -ml-4">
+			Céduler un café
+		</Button>
+		<Button tag="a" href="https://www.instagram.com/kath.inktribe/" target="_blank" rel="noopener noreferrer" isCircle>
+			<i class="fab fa-instagram" />
+		</Button>
+		<Button tag="a" href="https://www.linkedin.com/in/kathleen-michaud-8a98b6b4/" target="_blank" rel="noopener noreferrer" isCircle>
+			<i class="fab fa-linkedin" />
+		</Button>
+		<Button tag="a" href="https://www.behance.net/kathleenmichaud3" target="_blank" rel="noopener noreferrer" isCircle>
+			<i class="fab fa-behance" />
+		</Button>
+	</div>
 	<Section id="projets" class="container min-h-screen">
 		<header>
 			<SectionTitle>
-				Projets design
+				Créations
 			</SectionTitle>
 			<p class="font-cursive text-4xl text-purple mb-8">Clique pour voir plus!</p>
 		</header>

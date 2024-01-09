@@ -3,12 +3,13 @@ import ProjectLayout from "../layouts/ProjectLayout.astro";
 import Section from "../layouts/home/Section.astro";
 import mockup from "../assets/images/projets/moutonrebel/mockup_elements.png";
 import photoshop from "../assets/images/projets/moutonrebel/work_photoshop.png";
+import logo from "../assets/images/projets/moutonrebel/logo.png";
 
 ---
 
 <ProjectLayout 
     title="Mouton rebel"
-    logo="moutonrebel/logo.png"
+    logo={logo.src}
     color="text-moutonrebel"
     class="relative w-full z-10 pb-20 bg-[#1b1b1b] text-white"
 >

@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import ScrollUpButton from "../components/ScrollUpButton.astro";
 const { title, class: className, ...props } = Astro.props;
 ---
 
@@ -15,8 +16,9 @@ const { title, class: className, ...props } = Astro.props;
     <ViewTransitions />
 </head>
   <body>
-    <main transition:animate="none" {...props} class:list={[ className, "min-h-screen" ]}>
-        <slot />
+    <ScrollUpButton />
+    <main id="main" transition:animate="none" {...props} class:list={[ className, "min-h-screen" ]}>
+      <slot />
     </main>
   </body>
 </html>

@@ -4,12 +4,13 @@ import Section from "../layouts/home/Section.astro";
 import mockup from "../assets/images/projets/flashmonkeys/mockup_elements.png";
 import illustrator from "../assets/images/projets/flashmonkeys/work_illustrator.png";
 import photoshop from "../assets/images/projets/flashmonkeys/work_photoshop.png";
+import logo from "../assets/images/projets/flashmonkeys/logo.svg";
 
 ---
 
 <ProjectLayout 
     title="Flash Monkeys"
-    logo="flashmonkeys/logo.svg"
+    logo={logo.src}
     color="text-flashmonkeys"
 >
     <Fragment slot="title">

@@ -1,16 +1,15 @@
 ---
+import Link from "../components/Link.astro";
 import Layout from "./Layout.astro";
 
 const { title, logo, color, ...props } = Astro.props;
-
-import logo from `src/assets/images/projets/${logo}`;
 ---
 
 <Layout
     title={title}
     {...props}
 >
-    <a href="/Portfolio" class="font-cursive text-[8rem] leading-none px-8">x</a>
+    <Link href="/" class="font-cursive text-[8rem] leading-none px-8">x</Link>
     <header class="container py-16 lg:flex-row flex flex-col-reverse gap-4">
         <div class="mr-auto">
             <h1 class:list={[color, "text-7xl mb-3 font-bold uppercase"]}>
@@ -18,7 +17,7 @@ import logo from `src/assets/images/projets/${logo}`;
             </h1>
             <p class="text-3xl"><slot name="subtitle" /></p>
         </div>
-        <img width="200" src={logo.src} />
+        <img width="200" src={logo} />
     </header>
     <slot />
 </Layout>

@@ -4,12 +4,13 @@ import Section from "../layouts/home/Section.astro";
 import mockup from "../assets/images/projets/kinorivenord/mockup_elements.png";
 import illustrator from "../assets/images/projets/kinorivenord/work_illustrator.png";
 import photoshop from "../assets/images/projets/kinorivenord/work_photoshop.png";
+import logo from "../assets/images/projets/kinorivenord/logo.svg";
 
 ---
 
 <ProjectLayout 
     title="Kino Rive-Nord" 
-    logo="kinorivenord/logo.svg"
+    logo={logo.src}
     color="text-kinorivenord"
 >
     <Fragment slot="title">
