@@ -1,8 +1,26 @@
----
-import Button from "./Button.astro";
----
-<div class="fixed z-10 bottom-0 right-0 p-3">
-    <a class="bg-yellow hover:bg-pink hover:text-yellow text-pink rounded-full w-18 h-18 flex items-center justify-center" href="#main">
+<div id="scroll-up-btn" style="opacity:0;pointer-events:none;" class="transition-opacity fixed z-10 bottom-0 right-0 p-3">
+    <a class="bg-yellow hover:bg-pink hover:text-yellow text-pink rounded-full w-16 h-16 flex items-center justify-center" href="#main">
         <i class="text-3xl fa fa-arrow-up" />
     </a>
 </div>
+<script>
+    const scrollBtn = document.getElementById('scroll-up-btn')
+    let isGoingDown = false;
+    let lastKnownScrollPosition = 0;
+
+    document.addEventListener("scroll", () => {
+        if(window.scrollY > lastKnownScrollPosition && !isGoingDown) {
+            isGoingDown = true;
+            // @ts-ignore
+            scrollBtn.style.opacity = 1;
+            scrollBtn.style.pointerEvents = 'all';
+        } else if(window.scrollY < lastKnownScrollPosition && isGoingDown) {
+            isGoingDown = false;
+            // @ts-ignore
+            scrollBtn.style.opacity = 0;
+            scrollBtn.style.pointerEvents = 'none';
+        }
+
+        lastKnownScrollPosition = window.scrollY;
+    });
+</script>
