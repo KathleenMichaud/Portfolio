@@ -1,7 +1,6 @@
 <p data-words class="text-6xl relative">
     Je suis{" "}
     <strong class="block lg:inline h-[1em]" data-word>créative</strong>
-    <span data-oops style="display:none;" class="text-purple font-cursive absolute -rotate-45 left-1/2 -translate-x-1/2">Oups!</span>
 </p>
 <script>
     const words = [ "créative", "innovante", "spontanée", "TDAH"];
@@ -9,7 +8,6 @@
     
     containers.forEach((container) => {
         const wordContainer = container.querySelector('[data-word]');
-        const oops = container.querySelector('[data-oops]');
         let currentWordIndex = 0;
         let lastLetter;
         let timeout;
@@ -26,8 +24,6 @@
         function eraseLastWord() {
             timeout = setTimeout(() => {
                 if(lastLetter - 1 < -1) {
-                    //@ts-ignore
-                    oops.style.display = "none";
                     queueNextWord();
                 } else {
                     lastLetter--;
@@ -50,8 +46,6 @@
 
                     timeout = setTimeout(() => {
                         eraseLastWord();
-                        //@ts-ignore
-                        oops.style.display = "block";
                     }, 400);
                 } else {
                     updateWord(words[currentWordIndex]);
